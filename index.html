@@ -38,6 +38,7 @@
             transition: all 0.3s ease;
         }
 
+        /* Glitch efekti için arka plan */
         .glitch-bg {
             position: fixed;
             top: 0;
@@ -53,6 +54,7 @@
             animation: glitchMove 20s linear infinite;
         }
 
+        /* Ana container - YENİ: Flex yapısı */
         .main-container {
             display: flex;
             max-width: 1400px;
@@ -62,18 +64,21 @@
             min-height: 100vh;
         }
 
+        /* SOL PANEL - YENİ */
         .left-panel {
             width: 300px;
             flex-shrink: 0;
             transition: all 0.3s ease;
         }
 
+        /* SAĞ İÇERİK - YENİ */
         .right-content {
             flex: 1;
             min-width: 0;
             transition: all 0.3s ease;
         }
 
+        /* Header */
         .header {
             display: flex;
             justify-content: space-between;
@@ -110,6 +115,7 @@
             letter-spacing: 1px;
         }
 
+        /* DİL SEÇENEĞİ */
         .language-selector {
             display: flex;
             gap: 10px;
@@ -143,6 +149,7 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        /* SÜRÜKLƏ & TAŞI Alanı */
         .drop-zone {
             background: var(--bg-panel);
             border: 2px dashed var(--border);
@@ -186,6 +193,7 @@
             color: var(--text-secondary);
         }
 
+        /* MENÜ - SOL PANELE TAŞINDI */
         .menu {
             background: var(--bg-panel);
             border-radius: 15px;
@@ -212,6 +220,10 @@
             gap: 10px;
             font-size: 18px;
             font-weight: 600;
+            color: var(--accent);
+        }
+
+        .menu-title i {
             color: var(--accent);
         }
 
@@ -285,6 +297,21 @@
             font-weight: 500;
         }
 
+        .item-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
         .switch {
             width: 40px;
             height: 20px;
@@ -313,6 +340,7 @@
             transform: translateX(20px);
         }
 
+        /* Şarkı Player - SAĞ TARAFA TAŞINDI */
         .player-section {
             background: var(--bg-panel);
             border-radius: 15px;
@@ -412,13 +440,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .control-btn {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             border: 1px solid var(--border);
             background: var(--bg-card);
@@ -428,7 +456,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.2s;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         .control-btn:hover {
@@ -438,22 +466,23 @@
         }
 
         .control-btn.play {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: var(--accent);
             color: var(--bg-dark);
-            font-size: 24px;
+            font-size: 28px;
         }
 
         .control-btn.play:hover {
             box-shadow: 0 0 30px var(--accent-glow);
         }
 
+        /* EKSTRA KONTROL BUTONLARI - YENİ */
         .extra-controls {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             margin-top: 10px;
             flex-wrap: wrap;
         }
@@ -478,6 +507,12 @@
             transform: translateY(-2px);
         }
 
+        .extra-btn.active {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        /* BAŞLAT/BİTİR BUTONU - YENİ */
         .start-end-controls {
             display: flex;
             justify-content: center;
@@ -523,6 +558,7 @@
             transform: translateY(-3px);
         }
 
+        /* Lyrics Display - BÜYÜK EKRAN */
         .lyrics-container {
             background: var(--bg-card);
             border-radius: 10px;
@@ -558,6 +594,7 @@
             opacity: 1;
         }
 
+        /* Manuel Text Input - BÜYÜK */
         .manual-text-input {
             width: 100%;
             margin-top: 20px;
@@ -580,6 +617,7 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
 
+        /* Footer Info */
         .footer-info {
             text-align: center;
             padding: 20px;
@@ -599,35 +637,7 @@
             font-size: 12px;
         }
 
-        /* 10SN GERİ/İLERİ BUTON STİLLERİ */
-        .skip-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin: 15px 0;
-        }
-
-        .skip-btn {
-            padding: 10px 20px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-main);
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-
-        .skip-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent);
-        }
-
+        /* Animasyonlar */
         @keyframes glitchMove {
             0% { background-position: 0 0; }
             100% { background-position: 50px 50px; }
@@ -652,6 +662,7 @@
             }
         }
 
+        /* Notification */
         .notification {
             position: fixed;
             bottom: 20px;
@@ -669,6 +680,7 @@
             gap: 10px;
         }
 
+        /* Volume Slider */
         .volume-slider {
             width: 120px;
             height: 8px;
@@ -687,7 +699,68 @@
             cursor: pointer;
         }
 
-        /* GÖRÜNMEZ MOD */
+        /* MEDYA SEÇİCİ - YENİ */
+        .media-selector {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid var(--border);
+            display: none;
+        }
+
+        .media-options {
+            display: grid;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .media-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .media-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .media-option input[type="file"] {
+            display: none;
+        }
+
+        .media-option label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .continue-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--accent);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .continue-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* GÖRÜNMEZ MOD - YENİ: SADECE ŞARKI VE YAZILAR */
         body.invisible-mode .glitch-bg,
         body.invisible-mode .left-panel,
         body.invisible-mode .footer-info,
@@ -697,6 +770,7 @@
             pointer-events: none !important;
         }
 
+        /* Görünmez modda ŞARKI YAZILARI - TAM ORTA */
         .song-text-display {
             display: none;
             position: fixed;
@@ -746,6 +820,80 @@
             }
         }
 
+        /* MANUEL MODDA G TUŞU KORUMASI - GÜNCELLENDİ */
+        body.manual-mode.invisible-mode .song-text-display {
+            display: block !important;
+        }
+
+        body.manual-mode.invisible-mode .manual-text-input {
+            display: block !important;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            z-index: 10001;
+            background: rgba(0, 0, 0, 0.95);
+            border: 3px solid var(--accent);
+            color: var(--accent);
+            font-size: 22px;
+            line-height: 1.8;
+            animation: superGlow 2s infinite alternate;
+            padding: 30px;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+            resize: none;
+        }
+
+        /* LİRİK DÜZENLERKEN G TUŞU KORUMASI - YENİ */
+        body.editing-lyrics.invisible-mode .manual-text-input {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+
+        body.editing-lyrics.invisible-mode .song-text-display {
+            display: none !important;
+        }
+
+        /* BEYAZ MOD - SADECE PANEL */
+        body.white-mode .left-panel {
+            background: white !important;
+            color: black !important;
+        }
+
+        body.white-mode .left-panel .menu,
+        body.white-mode .left-panel .drop-zone,
+        body.white-mode .left-panel .header {
+            background: white !important;
+            color: black !important;
+            border-color: #ddd !important;
+        }
+
+        body.white-mode .left-panel .logo-text,
+        body.white-mode .left-panel .tr-text,
+        body.white-mode .left-panel .en-text,
+        body.white-mode .left-panel .menu-title,
+        body.white-mode .left-panel .item-text,
+        body.white-mode .left-panel .drop-text,
+        body.white-mode .left-panel .section-title {
+            color: black !important;
+        }
+
+        body.white-mode .left-panel .logo-icon,
+        body.white-mode .left-panel .item-icon,
+        body.white-mode .left-panel .badge {
+            background: black !important;
+            color: white !important;
+        }
+
+        body.white-mode .left-panel .lang-btn.active {
+            background: black !important;
+            color: white !important;
+        }
+
+        /* Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -760,6 +908,7 @@
             border-radius: 4px;
         }
 
+        /* Responsive */
         @media (max-width: 1024px) {
             .main-container {
                 flex-direction: column;
@@ -792,7 +941,21 @@
             }
             
             .control-buttons {
-                gap: 10px;
+                gap: 15px;
+            }
+            
+            .control-btn {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .control-btn.play {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .drop-zone {
+                padding: 40px 15px;
             }
             
             .album-art {
@@ -833,19 +996,38 @@
             .song-text-line {
                 font-size: 20px;
             }
+
+            body.manual-mode.invisible-mode .manual-text-input {
+                font-size: 16px;
+                width: 95%;
+                height: 70%;
+                padding: 20px;
+            }
+
+            .extra-controls {
+                flex-direction: column;
+            }
+
+            .extra-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Glitch Arka Plan -->
     <div class="glitch-bg"></div>
 
-    <!-- GÖRÜNMEZ MOD İÇİN ŞARKI YAZILARI -->
+    <!-- ŞARKI YAZILARI GÖSTERİMİ (Görünmez Mod için) -->
     <div class="song-text-display" id="songTextDisplay">
-        <div class="song-text-line">Şarkı sözleri yükleniyor...</div>
+        <!-- Şarkı sözleri buraya yüklenecek -->
     </div>
 
     <div class="main-container">
+        <!-- SOL PANEL -->
         <div class="left-panel">
+            <!-- Header ve Dil Seçeneği -->
             <div class="header">
                 <div class="logo">
                     <div class="logo-icon">
@@ -854,6 +1036,7 @@
                     <div class="logo-text">ACHAW PLAYER</div>
                 </div>
                 
+                <!-- DİL SEÇENEĞİ -->
                 <div class="language-selector">
                     <button class="lang-btn active" data-lang="tr">
                         🇹🇷 TR
@@ -864,6 +1047,7 @@
                 </div>
             </div>
 
+            <!-- SÜRÜKLƏ & TAŞI Alanı -->
             <div class="drop-zone" id="dropZone">
                 <div class="drop-icon">
                     <i class="fas fa-cloud-upload-alt"></i>
@@ -874,6 +1058,48 @@
                 <div class="drop-subtext en-text" style="display: none;">Drag MP3 files into this area</div>
             </div>
 
+            <!-- MEDYA SEÇİCİ - YENİ -->
+            <div class="media-selector" id="mediaSelector">
+                <div class="section-title">
+                    <i class="fas fa-plus-circle"></i>
+                    <span class="tr-text">MEDYA EKLE</span>
+                    <span class="en-text" style="display: none;">ADD MEDIA</span>
+                </div>
+                <div class="media-options">
+                    <div class="media-option" id="addVideoOption">
+                        <label>
+                            <i class="fas fa-video"></i>
+                            <span class="tr-text">Video Ekle</span>
+                            <span class="en-text" style="display: none;">Add Video</span>
+                            <input type="file" accept="video/*" id="videoInput">
+                        </label>
+                    </div>
+                    <div class="media-option" id="addPhotoOption">
+                        <label>
+                            <i class="fas fa-camera"></i>
+                            <span class="tr-text">Fotoğraf Ekle</span>
+                            <span class="en-text" style="display: none;">Add Photo</span>
+                            <input type="file" accept="image/*" id="photoInput">
+                        </label>
+                    </div>
+                    <div class="media-option" id="addGifOption">
+                        <label>
+                            <i class="fas fa-film"></i>
+                            <span class="tr-text">GIF Ekle</span>
+                            <span class="en-text" style="display: none;">Add GIF</span>
+                            <input type="file" accept="image/gif" id="gifInput">
+                        </label>
+                    </div>
+                </div>
+                <button class="continue-btn tr-text" id="continueWithoutMedia">
+                    Medya Eklemeden Devam Et
+                </button>
+                <button class="continue-btn en-text" id="continueWithoutMediaEn" style="display: none;">
+                    Continue Without Media
+                </button>
+            </div>
+
+            <!-- MENÜ -->
             <div class="menu">
                 <div class="menu-header">
                     <div class="menu-title">
@@ -884,6 +1110,7 @@
                 </div>
                 
                 <div class="menu-content">
+                    <!-- N.MP3 Bölümü -->
                     <div class="menu-section">
                         <div class="section-title">
                             <i class="fas fa-file-audio"></i>
@@ -896,17 +1123,22 @@
                                     <div class="item-icon">
                                         <i class="fas fa-upload"></i>
                                     </div>
-                                    <div class="item-text tr-text">MP3 YÜKLE</div>
-                                    <div class="item-text en-text" style="display: none;">UPLOAD MP3</div>
+                                    <div class="item-text tr-text">Standart (MP3) - MP3 YÜKLE</div>
+                                    <div class="item-text en-text" style="display: none;">Standard (MP3) - UPLOAD MP3</div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="badge tr-text">YENİ</div>
+                                    <div class="badge en-text" style="display: none;">NEW</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- LIRIK AYARLARI -->
                     <div class="menu-section">
                         <div class="section-title">
                             <i class="fas fa-file-alt"></i>
-                            <span class="tr-text">LİRİK AYARLARI</span>
+                            <span class="tr-text">LIRIK AYARLARI</span>
                             <span class="en-text" style="display: none;">LYRICS SETTINGS</span>
                         </div>
                         <div class="menu-items">
@@ -915,17 +1147,106 @@
                                     <div class="item-icon">
                                         <i class="fas fa-edit"></i>
                                     </div>
-                                    <div class="item-text tr-text">LİRİKLERİ DÜZENLE</div>
+                                    <div class="item-text tr-text">LIRİKLERİ DEĞİŞTİR</div>
                                     <div class="item-text en-text" style="display: none;">EDIT LYRICS</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- ARKA PLAN -->
+                    <div class="menu-section">
+                        <div class="section-title">
+                            <i class="fas fa-image"></i>
+                            <span class="tr-text">ARKA PLAN</span>
+                            <span class="en-text" style="display: none;">BACKGROUND</span>
+                        </div>
+                        <div class="menu-items">
+                            <div class="menu-item" id="bgVideo">
+                                <div class="item-left">
+                                    <div class="item-icon">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                    <div class="item-text tr-text">VİDEO</div>
+                                    <div class="item-text en-text" style="display: none;">VIDEO</div>
+                                </div>
+                            </div>
+                            <div class="menu-item" id="bgPhoto">
+                                <div class="item-left">
+                                    <div class="item-icon">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <div class="item-text tr-text">FOTOĞRAF</div>
+                                    <div class="item-text en-text" style="display: none;">PHOTO</div>
+                                </div>
+                            </div>
+                            <div class="menu-item" id="bgGif">
+                                <div class="item-left">
+                                    <div class="item-icon">
+                                        <i class="fas fa-film"></i>
+                                    </div>
+                                    <div class="item-text tr-text">GİF</div>
+                                    <div class="item-text en-text" style="display: none;">GIF</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OPAKLIK -->
+                    <div class="menu-section">
+                        <div class="section-title">
+                            <i class="fas fa-adjust"></i>
+                            <span class="tr-text">OPAKLIK</span>
+                            <span class="en-text" style="display: none;">OPACITY</span>
+                        </div>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-left">
+                                    <div class="item-icon">
+                                        <i class="fas fa-sliders-h"></i>
+                                    </div>
+                                    <div class="item-text tr-text">Opaklık Seviyesi</div>
+                                    <div class="item-text en-text" style="display: none;">Opacity Level</div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="switch" id="opacitySwitch">
+                                        <div class="switch-knob"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TERS RENK MODU - BEYAZ MOD BUTONU -->
+                    <div class="menu-section">
+                        <div class="section-title">
+                            <i class="fas fa-inverse"></i>
+                            <span class="tr-text">PANEL RENGİ</span>
+                            <span class="en-text" style="display: none;">PANEL COLOR</span>
+                        </div>
+                        <div class="menu-items">
+                            <div class="menu-item" id="whiteModeToggle">
+                                <div class="item-left">
+                                    <div class="item-icon">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <div class="item-text tr-text">Beyaz Mod</div>
+                                    <div class="item-text en-text" style="display: none;">White Mode</div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="switch" id="whiteModeSwitch">
+                                        <div class="switch-knob"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SİFIRLA -->
                     <div class="menu-section">
                         <div class="section-title">
                             <i class="fas fa-redo"></i>
-                            <span class="tr-text">SIFIRLA</span>
+                            <span class="tr-text">SİFIRLA</span>
                             <span class="en-text" style="display: none;">RESET</span>
                         </div>
                         <div class="menu-items">
@@ -934,8 +1255,8 @@
                                     <div class="item-icon" style="color: var(--danger);">
                                         <i class="fas fa-trash"></i>
                                     </div>
-                                    <div class="item-text tr-text">TÜMÜNÜ SIFIRLA</div>
-                                    <div class="item-text en-text" style="display: none;">RESET ALL</div>
+                                    <div class="item-text tr-text">Tüm Ayarları Sıfırla</div>
+                                    <div class="item-text en-text" style="display: none;">Reset All Settings</div>
                                 </div>
                             </div>
                         </div>
@@ -944,7 +1265,9 @@
             </div>
         </div>
 
+        <!-- SAĞ İÇERİK -->
         <div class="right-content">
+            <!-- Şarkı Player -->
             <div class="player-section">
                 <div class="player-header">
                     <div class="now-playing">
@@ -973,59 +1296,69 @@
                         </div>
                     </div>
 
-                    <!-- 10SN GERİ/İLERİ BUTONLARI - DOĞRU YERDE -->
-                    <div class="skip-controls">
-                        <button class="skip-btn" id="back10sBtn">
-                            <i class="fas fa-backward"></i>
-                            <span class="tr-text">10sn Geri</span>
-                            <span class="en-text" style="display: none;">10s Back</span>
-                        </button>
-                        <button class="skip-btn" id="forward10sBtn">
-                            <i class="fas fa-forward"></i>
-                            <span class="tr-text">10sn İleri</span>
-                            <span class="en-text" style="display: none;">10s Forward</span>
-                        </button>
-                    </div>
-
                     <div class="control-buttons">
-                        <button class="control-btn" id="prevBtn">
+                        <button class="control-btn" id="prevBtn" title="Önceki">
                             <i class="fas fa-step-backward"></i>
                         </button>
-                        <button class="control-btn play" id="playBtn">
+                        <button class="control-btn play" id="playBtn" title="Oynat/Duraklat">
                             <i class="fas fa-play"></i>
                         </button>
-                        <button class="control-btn" id="nextBtn">
+                        <button class="control-btn" id="nextBtn" title="Sonraki">
                             <i class="fas fa-step-forward"></i>
                         </button>
-                        <button class="control-btn" id="volumeBtn">
+                        <button class="control-btn" id="volumeBtn" title="Ses">
                             <i class="fas fa-volume-up"></i>
                         </button>
                         <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
                     </div>
 
+                    <!-- EKSTRA KONTROLLER - YENİ -->
+                    <div class="extra-controls">
+                        <button class="extra-btn" id="back10sBtn" title="10 Saniye Geri">
+                            <i class="fas fa-backward"></i>
+                            <span class="tr-text">10sn Geri</span>
+                            <span class="en-text" style="display: none;">10s Back</span>
+                        </button>
+                        <button class="extra-btn" id="forward10sBtn" title="10 Saniye İleri">
+                            <i class="fas fa-forward"></i>
+                            <span class="tr-text">10sn İleri</span>
+                            <span class="en-text" style="display: none;">10s Forward</span>
+                        </button>
+                        <button class="extra-btn" id="pauseBtn" title="Duraklat">
+                            <i class="fas fa-pause"></i>
+                            <span class="tr-text">Duraklat</span>
+                            <span class="en-text" style="display: none;">Pause</span>
+                        </button>
+                    </div>
+
+                    <!-- BAŞLAT/BİTİR BUTONLARI - YENİ -->
                     <div class="start-end-controls">
                         <button class="action-btn start-btn" id="startMediaBtn">
                             <i class="fas fa-play-circle"></i>
-                            <span class="tr-text">BAŞLAT</span>
-                            <span class="en-text" style="display: none;">START</span>
+                            <span class="tr-text">ŞARKI/GİF BAŞLAT</span>
+                            <span class="en-text" style="display: none;">START SONG/GIF</span>
                         </button>
                         <button class="action-btn end-btn" id="endMediaBtn">
                             <i class="fas fa-stop-circle"></i>
-                            <span class="tr-text">BİTİR (R)</span>
-                            <span class="en-text" style="display: none;">END (R)</span>
+                            <span class="tr-text">BİTİR (R TUŞU)</span>
+                            <span class="en-text" style="display: none;">END (R KEY)</span>
                         </button>
                     </div>
                 </div>
 
+                <!-- Lyrics Display -->
                 <div class="lyrics-container" id="lyricsDisplay">
+                    <!-- Şarkı sözleri buraya yazılacak -->
                     <div class="lyrics-line">Şarkı yükleyin veya sözlerinizi yazın</div>
                     <div class="lyrics-line">LİRİK AYARLARI menüsünden sözlerinizi düzenleyebilirsiniz</div>
                 </div>
 
+                <!-- Manuel Mod için Metin Girişi -->
                 <textarea class="manual-text-input tr-text" id="manualLyricsInput" placeholder="Kendi şarkı sözlerinizi buraya yazın... (Her satıra bir dize)"></textarea>
                 <textarea class="manual-text-input en-text" id="manualLyricsInputEn" placeholder="Write your own lyrics here... (One line per verse)" style="display: none;"></textarea>
             </div>
 
+            <!-- Footer Info -->
             <div class="footer-info">
                 <p class="tr-text">
                     <i class="fas fa-info-circle"></i> 
@@ -1048,23 +1381,32 @@
         </div>
     </div>
 
+    <!-- Gizli Audio Element -->
     <audio id="audioPlayer"></audio>
+
+    <!-- Gizli File Input -->
     <input type="file" id="fileInput" accept="audio/mp3,audio/*" style="display: none;">
 
+    <!-- JavaScript -->
     <script>
-        // DEĞİŞKENLER
-        let musicLibrary = [];
+        // Müzik kütüphanesi
+        const musicLibrary = [];
+        let manualLyricsMode = false;
+        let mediaAdded = false;
+        let isWhiteMode = false;
+        let currentLyricIndex = 0;
+        let lyricsInterval = null;
+        let isMediaActive = false;
+        let isEditingLyrics = false;
+
+        // Oynatıcı değişkenleri
         let currentSongIndex = -1;
         let isPlaying = false;
         let currentVolume = 0.8;
         let currentLanguage = 'tr';
         let isInvisibleMode = false;
-        let isMediaActive = false;
-        let manualLyricsMode = false;
-        let isEditingLyrics = false;
-        let currentLyricIndex = 0;
 
-        // DOM ELEMENTLERİ
+        // DOM Elementleri
         const audioPlayer = document.getElementById('audioPlayer');
         const playBtn = document.getElementById('playBtn');
         const prevBtn = document.getElementById('prevBtn');
@@ -1084,54 +1426,200 @@
         const lyricsDisplay = document.getElementById('lyricsDisplay');
         const manualLyricsInput = document.getElementById('manualLyricsInput');
         const manualLyricsInputEn = document.getElementById('manualLyricsInputEn');
+        const mediaSelector = document.getElementById('mediaSelector');
+        const bgVideo = document.getElementById('bgVideo');
+        const bgPhoto = document.getElementById('bgPhoto');
+        const bgGif = document.getElementById('bgGif');
+        const videoInput = document.getElementById('videoInput');
+        const photoInput = document.getElementById('photoInput');
+        const gifInput = document.getElementById('gifInput');
+        const continueWithoutMedia = document.getElementById('continueWithoutMedia');
+        const continueWithoutMediaEn = document.getElementById('continueWithoutMediaEn');
+        const whiteModeSwitch = document.getElementById('whiteModeSwitch');
         const songTextDisplay = document.getElementById('songTextDisplay');
         const back10sBtn = document.getElementById('back10sBtn');
         const forward10sBtn = document.getElementById('forward10sBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
         const startMediaBtn = document.getElementById('startMediaBtn');
         const endMediaBtn = document.getElementById('endMediaBtn');
 
-        // SAYFA YÜKLENDİĞİNDE
+        // Sayfa yüklendiğinde
         document.addEventListener('DOMContentLoaded', function() {
-            initPlayer();
-        });
-
-        function initPlayer() {
-            // DİL DEĞİŞTİRME
+            console.log('🎵 ACHAW PLAYER başlatılıyor...');
+            
+            // Başlangıçta boş göster
+            resetPlayer();
+            
+            // Dil butonlarına event ekle
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    changeLanguage(this.getAttribute('data-lang'));
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
                 });
             });
-
-            // SIFIRLA BUTONU
-            document.getElementById('resetBtn').addEventListener('click', resetAllSettings);
-
-            // LİRİK DÜZENLEME
-            document.getElementById('lyricsEdit').addEventListener('click', toggleManualLyricsMode);
-
-            // 10SN GERİ/İLERİ BUTONLARI
+            
+            // Switch'lere event ekle
+            document.getElementById('opacitySwitch').addEventListener('click', function() {
+                this.classList.toggle('active');
+                document.body.style.opacity = this.classList.contains('active') ? '0.8' : '1';
+                showNotification(currentLanguage === 'tr' ? 
+                    'Opaklık: ' + (this.classList.contains('active') ? 'Düşük' : 'Normal') :
+                    'Opacity: ' + (this.classList.contains('active') ? 'Low' : 'Normal'));
+            });
+            
+            // Beyaz Mod Switch'i
+            whiteModeSwitch.addEventListener('click', function() {
+                isWhiteMode = !isWhiteMode;
+                this.classList.toggle('active');
+                
+                if (isWhiteMode) {
+                    document.body.classList.add('white-mode');
+                    showNotification(currentLanguage === 'tr' ? 
+                        'Beyaz mod aktif (Sadece panel)' : 
+                        'White mode active (Panel only)');
+                } else {
+                    document.body.classList.remove('white-mode');
+                    showNotification(currentLanguage === 'tr' ? 
+                        'Beyaz mod kapatıldı' : 
+                        'White mode deactivated');
+                }
+            });
+            
+            // Reset butonu
+            document.getElementById('resetBtn').addEventListener('click', function() {
+                if (confirm(currentLanguage === 'tr' ? 
+                    'Tüm ayarlar sıfırlanacak. Emin misiniz?' : 
+                    'All settings will be reset. Are you sure?')) {
+                    resetAllSettings();
+                }
+            });
+            
+            // Manuel söz düzenleme
+            document.getElementById('lyricsEdit').addEventListener('click', function() {
+                toggleManualLyricsMode();
+            });
+            
+            // Manuel metin girişi - SPACE TUŞU KELİME GEÇİŞİ
+            function handleSpaceInTextarea(e) {
+                if (e.key === ' ' && (e.target === manualLyricsInput || e.target === manualLyricsInputEn)) {
+                    // Textarea'da space normal çalışsın
+                    return true;
+                }
+            }
+            
+            manualLyricsInput.addEventListener('keydown', handleSpaceInTextarea);
+            manualLyricsInputEn.addEventListener('keydown', handleSpaceInTextarea);
+            
+            // Manuel metin girişi değişikliği
+            manualLyricsInput.addEventListener('input', function() {
+                updateLyricsFromManualInput();
+                updateSongTextDisplay(); // Görünmez mod için güncelle
+            });
+            
+            manualLyricsInputEn.addEventListener('input', function() {
+                updateLyricsFromManualInput();
+                updateSongTextDisplay(); // Görünmez mod için güncelle
+            });
+            
+            // Medya butonları
+            document.getElementById('bgVideo').addEventListener('click', function() {
+                showMediaSelector('video');
+            });
+            
+            document.getElementById('bgPhoto').addEventListener('click', function() {
+                showMediaSelector('photo');
+            });
+            
+            document.getElementById('bgGif').addEventListener('click', function() {
+                showMediaSelector('gif');
+            });
+            
+            // Medya inputları
+            videoInput.addEventListener('change', function(e) {
+                if (e.target.files[0]) {
+                    handleMediaUpload(e.target.files[0], 'video');
+                }
+            });
+            
+            photoInput.addEventListener('change', function(e) {
+                if (e.target.files[0]) {
+                    handleMediaUpload(e.target.files[0], 'photo');
+                }
+            });
+            
+            gifInput.addEventListener('change', function(e) {
+                if (e.target.files[0]) {
+                    handleMediaUpload(e.target.files[0], 'gif');
+                }
+            });
+            
+            // Devam et butonları
+            continueWithoutMedia.addEventListener('click', function() {
+                hideMediaSelector();
+                showNotification(currentLanguage === 'tr' ? 
+                    'Medya eklemeden devam ediliyor' : 
+                    'Continuing without media');
+            });
+            
+            continueWithoutMediaEn.addEventListener('click', function() {
+                hideMediaSelector();
+                showNotification(currentLanguage === 'tr' ? 
+                    'Medya eklemeden devam ediliyor' : 
+                    'Continuing without media');
+            });
+            
+            // Ekstra kontrol butonları
             back10sBtn.addEventListener('click', function() {
                 if (currentSongIndex === -1) {
-                    showNotification('Önce bir şarkı yükleyin!');
+                    showNotification(currentLanguage === 'tr' ? 
+                        'Önce bir şarkı yükleyin!' : 
+                        'Please upload a song first!');
                     return;
                 }
+                
                 audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 10);
-                showNotification('10 saniye geri');
+                showNotification(currentLanguage === 'tr' ? 
+                    '10 saniye geri gidildi' : 
+                    '10 seconds back');
             });
-
+            
             forward10sBtn.addEventListener('click', function() {
                 if (currentSongIndex === -1) {
-                    showNotification('Önce bir şarkı yükleyin!');
+                    showNotification(currentLanguage === 'tr' ? 
+                        'Önce bir şarkı yükleyin!' : 
+                        'Please upload a song first!');
                     return;
                 }
+                
                 audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 10);
-                showNotification('10 saniye ileri');
+                showNotification(currentLanguage === 'tr' ? 
+                    '10 saniye ileri gidildi' : 
+                    '10 seconds forward');
             });
-
-            // BAŞLAT BUTONU - OTO EKRAN TEMİZLEME
+            
+            pauseBtn.addEventListener('click', function() {
+                if (currentSongIndex === -1) return;
+                
+                if (isPlaying) {
+                    audioPlayer.pause();
+                    isPlaying = false;
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    showNotification(currentLanguage === 'tr' ? 
+                        'Şarkı duraklatıldı' : 
+                        'Song paused');
+                } else {
+                    showNotification(currentLanguage === 'tr' ? 
+                        'Şarkı zaten duraklatılmış' : 
+                        'Song already paused');
+                }
+            });
+            
+            // Başlat butonu
             startMediaBtn.addEventListener('click', function() {
                 if (currentSongIndex === -1) {
-                    showNotification('Önce bir şarkı yükleyin!');
+                    showNotification(currentLanguage === 'tr' ? 
+                        'Önce bir şarkı yükleyin!' : 
+                        'Please upload a song first!');
                     return;
                 }
                 
@@ -1139,30 +1627,37 @@
                 startMediaBtn.disabled = true;
                 endMediaBtn.disabled = false;
                 
-                // OTOMATİK GÖRÜNMEZ MOD AÇ
-                toggleInvisibleMode();
-                
-                // ŞARKIYI BAŞLAT
+                // Şarkıyı başlat
                 if (!isPlaying) {
                     togglePlay();
                 }
                 
-                showNotification('ŞARKI BAŞLATILDI!');
+                // GIF arka plan kontrolü
+                const gif = document.getElementById('backgroundVideo');
+                if (gif) {
+                    gif.play();
+                }
+                
+                showNotification(currentLanguage === 'tr' ? 
+                    'ŞARKI/GIF başlatıldı!' : 
+                    'SONG/GIF started!');
             });
-
-            // BİTİR BUTONU
-            endMediaBtn.addEventListener('click', endMedia);
-
-            // SÜRÜKLE BIRAK
+            
+            // Bitir butonu
+            endMediaBtn.addEventListener('click', function() {
+                endMedia();
+            });
+            
+            // Sürükle bırak
             dropZone.addEventListener('dragover', function(e) {
                 e.preventDefault();
                 this.classList.add('dragover');
             });
-
+            
             dropZone.addEventListener('dragleave', function() {
                 this.classList.remove('dragover');
             });
-
+            
             dropZone.addEventListener('drop', function(e) {
                 e.preventDefault();
                 this.classList.remove('dragover');
@@ -1172,62 +1667,190 @@
                     handleFileUpload(files[0]);
                 }
             });
-
+            
             dropZone.addEventListener('click', function() {
                 fileInput.click();
             });
-
+            
             fileInput.addEventListener('change', function(e) {
                 if (e.target.files[0]) {
                     handleFileUpload(e.target.files[0]);
                 }
             });
-
-            // PLAYER KONTROLLERİ
+            
+            // Oynatıcı kontrolleri
             playBtn.addEventListener('click', togglePlay);
             prevBtn.addEventListener('click', playPrevious);
             nextBtn.addEventListener('click', playNext);
-            volumeSlider.addEventListener('input', updateVolume);
-            progressBar.addEventListener('click', seek);
-
-            // AUDIO EVENTS
+            
+            // Ses kontrolü
+            volumeSlider.addEventListener('input', function() {
+                currentVolume = this.value / 100;
+                audioPlayer.volume = currentVolume;
+            });
+            
+            // İlerleme çubuğu
+            progressBar.addEventListener('click', function(e) {
+                if (currentSongIndex === -1) return;
+                const clickPosition = e.offsetX;
+                const barWidth = this.clientWidth;
+                const percentage = clickPosition / barWidth;
+                
+                audioPlayer.currentTime = percentage * audioPlayer.duration;
+                updateProgressBar();
+            });
+            
+            // Audio event'leri
             audioPlayer.addEventListener('timeupdate', updateProgressBar);
             audioPlayer.addEventListener('loadedmetadata', updateSongInfo);
-            audioPlayer.addEventListener('ended', handleSongEnded); // ŞARKI BİTİŞİ
-
-            // KLAVYE KONTROLLERİ
-            document.addEventListener('keydown', handleKeyPress);
-
-            // MANUEL LİRİK GİRİŞİ
-            manualLyricsInput.addEventListener('input', updateLyricsFromManual);
-            manualLyricsInputEn.addEventListener('input', updateLyricsFromManual);
-
-            showNotification('ACHAW PLAYER HAZIR! 🎵 MP3 dosyası sürükleyin');
-        }
-
-        // DOSYA YÜKLEME
-        function handleFileUpload(file) {
-            const song = {
-                title: file.name.replace('.mp3', ''),
-                artist: 'Yüklenen Şarkı',
-                album: 'Kullanıcı Yüklemesi',
-                src: URL.createObjectURL(file),
-                cover: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                duration: 180,
-                lyrics: {
-                    tr: ['Şarkı başlıyor...', 'Lirikler mevcut değil', 'Kendi liriklerinizi ekleyin'],
-                    en: ['Song starting...', 'Lyrics not available', 'Add your own lyrics']
-                }
-            };
-
-            musicLibrary.push(song);
-            currentSongIndex = musicLibrary.length - 1;
-            loadSong(currentSongIndex);
+            audioPlayer.addEventListener('ended', playNext);
             
-            showNotification(file.name + ' yüklendi!');
+            // Klavye kontrolleri
+            document.addEventListener('keydown', function(e) {
+                // G tuşu - Görünmez mod (LİRİK DÜZENLERKEN KORUMALI)
+                if (e.key === 'g' || e.key === 'G') {
+                    e.preventDefault();
+                    
+                    // Lirik düzenlerken koruma
+                    if (isEditingLyrics) {
+                        showNotification(currentLanguage === 'tr' ? 
+                            'Lirik düzenlerken G tuşu devre dışı' : 
+                            'G key disabled while editing lyrics');
+                        return;
+                    }
+                    
+                    toggleInvisibleMode();
+                }
+                
+                // R tuşu - Bitir
+                if (e.key === 'r' || e.key === 'R') {
+                    e.preventDefault();
+                    endMedia();
+                }
+                
+                // Space - KELİME GEÇİŞİ (Sadece görünmez modda)
+                if (e.key === ' ' && isInvisibleMode) {
+                    e.preventDefault();
+                    nextLyric();
+                }
+                
+                // Space - Oynat/Duraklat (Normal modda ve textarea'da değilse)
+                if (e.key === ' ' && currentSongIndex !== -1 && !isInvisibleMode) {
+                    const activeElement = document.activeElement;
+                    if (activeElement !== manualLyricsInput && activeElement !== manualLyricsInputEn) {
+                        e.preventDefault();
+                        togglePlay();
+                    }
+                }
+                
+                // Sol ok - Önceki şarkı
+                if (e.key === 'ArrowLeft' && currentSongIndex !== -1) {
+                    e.preventDefault();
+                    playPrevious();
+                }
+                
+                // Sağ ok - Sonraki şarkı
+                if (e.key === 'ArrowRight' && currentSongIndex !== -1) {
+                    e.preventDefault();
+                    playNext();
+                }
+            });
+            
+            // Başlangıç bildirimi
+            setTimeout(() => {
+                showNotification(currentLanguage === 'tr' ? 
+                    'ACHAW PLAYER hazır! 🎵 MP3 dosyası sürükleyin' : 
+                    'ACHAW PLAYER ready! 🎵 Drag MP3 file');
+            }, 1000);
+        });
+
+        // Player'ı sıfırla
+        function resetPlayer() {
+            currentSongTitle.textContent = currentLanguage === 'tr' ? 'Şarkı Seçin' : 'Select Song';
+            currentArtist.textContent = currentLanguage === 'tr' ? 'Sanatçı Seçin' : 'Select Artist';
+            albumImage.src = 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
+            updateLyrics([currentLanguage === 'tr' ? 'Şarkı yükleyin veya sözlerinizi yazın' : 'Upload a song or write your lyrics']);
+            updateSongTextDisplay(); // Görünmez mod için güncelle
+            mediaAdded = false;
+            isMediaActive = false;
+            startMediaBtn.disabled = false;
+            endMediaBtn.disabled = true;
         }
 
-        // ŞARKI YÜKLE
+        // Medya seçici göster
+        function showMediaSelector(type) {
+            mediaSelector.style.display = 'block';
+            mediaAdded = false;
+            
+            // Seçilen türü vurgula
+            document.querySelectorAll('.media-option').forEach(option => {
+                option.style.background = 'rgba(255, 255, 255, 0.05)';
+            });
+            
+            if (type === 'video') {
+                document.getElementById('addVideoOption').style.background = 'rgba(255, 255, 255, 0.1)';
+            } else if (type === 'photo') {
+                document.getElementById('addPhotoOption').style.background = 'rgba(255, 255, 255, 0.1)';
+            } else if (type === 'gif') {
+                document.getElementById('addGifOption').style.background = 'rgba(255, 255, 255, 0.1)';
+            }
+        }
+
+        // Medya seçici gizle
+        function hideMediaSelector() {
+            mediaSelector.style.display = 'none';
+        }
+
+        // Medya yükleme
+        function handleMediaUpload(file, type) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                if (type === 'photo' || type === 'gif') {
+                    // Arka plan resmi olarak ayarla (SADECE ARKA PLAN)
+                    document.body.style.backgroundImage = `url(${e.target.result})`;
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundAttachment = 'fixed';
+                    
+                    // Beyaz modda bile arka plan korunsun
+                    if (isWhiteMode) {
+                        document.body.style.backgroundImage = `url(${e.target.result})`;
+                    }
+                } else if (type === 'video') {
+                    // Video için arka plan
+                    const video = document.createElement('video');
+                    video.src = e.target.result;
+                    video.autoplay = true;
+                    video.loop = true;
+                    video.muted = true;
+                    video.style.position = 'fixed';
+                    video.style.top = '0';
+                    video.style.left = '0';
+                    video.style.width = '100%';
+                    video.style.height = '100%';
+                    video.style.objectFit = 'cover';
+                    video.style.zIndex = '-2';
+                    video.id = 'backgroundVideo';
+                    
+                    // Eski videoyu temizle
+                    const oldVideo = document.getElementById('backgroundVideo');
+                    if (oldVideo) oldVideo.remove();
+                    
+                    document.body.appendChild(video);
+                }
+                
+                mediaAdded = true;
+                hideMediaSelector();
+                showNotification(currentLanguage === 'tr' ? 
+                    `${type === 'video' ? 'Video' : type === 'photo' ? 'Fotoğraf' : 'GIF'} arka plana eklendi` :
+                    `${type === 'video' ? 'Video' : type === 'photo' ? 'Photo' : 'GIF'} added as background`);
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+        // Şarkı yükleme
         function loadSong(index) {
             if (index < 0 || index >= musicLibrary.length) return;
             
@@ -1236,90 +1859,82 @@
             
             audioPlayer.src = song.src;
             currentSongTitle.textContent = song.title;
-            currentArtist.textContent = song.artist;
+            currentArtist.textContent = `${song.artist} • ${song.album}`;
             albumImage.src = song.cover;
             
+            // Otomatik sözleri yükle
             if (song.lyrics && !manualLyricsMode) {
                 updateLyrics(song.lyrics[currentLanguage] || song.lyrics.tr || []);
+                updateSongTextDisplay(); // Görünmez mod için güncelle
             }
             
+            // Toplam süreyi güncelle
             totalTimeEl.textContent = formatTime(song.duration);
             totalTimeText.textContent = formatTime(song.duration);
             
+            // Manuel mod gizle
             hideManualInput();
             
+            // Eğer oynatılıyorsa devam et
             if (isPlaying) {
-                audioPlayer.play();
+                audioPlayer.play().catch(e => console.log("Oynatma hatası:", e));
             }
         }
 
-        // GÖRÜNMEZ MOD
-        function toggleInvisibleMode() {
-            if (isEditingLyrics) {
-                showNotification('Lirik düzenlerken görünmez mod kullanılamaz');
-                return;
-            }
-            
-            isInvisibleMode = !isInvisibleMode;
-            
-            if (isInvisibleMode) {
-                document.body.classList.add('invisible-mode');
-                updateSongTextDisplay();
-                showNotification('GÖRÜNMEZ MOD AKTİF');
-            } else {
-                document.body.classList.remove('invisible-mode');
-                showNotification('GÖRÜNMEZ MOD PASİF');
-            }
-        }
-
-        // ŞARKI BİTİŞİNDE PANEL GERİ GETİR
-        function handleSongEnded() {
-            // ŞARKI BİTTİĞİNDE GÖRÜNMEZ MODDAN ÇIK
-            if (isInvisibleMode && isMediaActive) {
-                toggleInvisibleMode(); // PANEL GERİ GELİR
-            }
-            
-            // SONRAKİ ŞARKIYA GEÇ
-            if (isMediaActive) {
-                playNext();
-            } else {
-                isPlaying = false;
-                playBtn.innerHTML = '<i class="fas fa-play"></i>';
-            }
-        }
-
-        // MANUEL LİRİK MODU
+        // Manuel şarkı sözü modunu aç/kapat
         function toggleManualLyricsMode() {
             manualLyricsMode = !manualLyricsMode;
             isEditingLyrics = manualLyricsMode;
             
             if (manualLyricsMode) {
-                document.body.classList.add('editing-lyrics');
-                if (currentLanguage === 'tr') {
-                    manualLyricsInput.style.display = 'block';
-                    manualLyricsInput.value = getCurrentLyricsText();
-                } else {
-                    manualLyricsInputEn.style.display = 'block';
-                    manualLyricsInputEn.value = getCurrentLyricsText();
-                }
+                // Manuel mod açık
+                document.body.classList.add('manual-mode', 'editing-lyrics');
+                manualLyricsInput.style.display = currentLanguage === 'tr' ? 'block' : 'none';
+                manualLyricsInputEn.style.display = currentLanguage === 'en' ? 'block' : 'none';
                 lyricsDisplay.style.display = 'none';
-                showNotification('LİRİK DÜZENLEME MODU');
+                
+                // Mevcut sözleri textarea'ya kopyala
+                const currentLyrics = Array.from(lyricsDisplay.querySelectorAll('.lyrics-line'))
+                    .map(line => line.textContent)
+                    .join('\n');
+                
+                if (currentLanguage === 'tr') {
+                    manualLyricsInput.value = currentLyrics;
+                } else {
+                    manualLyricsInputEn.value = currentLyrics;
+                }
+                
+                // Görünmez modda bile textarea gözüksün
+                if (isInvisibleMode) {
+                    document.body.classList.add('manual-mode', 'editing-lyrics');
+                }
+                
+                showNotification(currentLanguage === 'tr' ? 
+                    'Manuel söz düzenleme modu açık (G tuşu devre dışı)' : 
+                    'Manual lyrics editing mode on (G key disabled)');
             } else {
+                // Manuel mod kapalı
                 isEditingLyrics = false;
-                document.body.classList.remove('editing-lyrics');
+                document.body.classList.remove('manual-mode', 'editing-lyrics');
                 hideManualInput();
-                updateLyricsFromManual();
-                showNotification('LİRİK DÜZENLEME KAPATILDI');
+                updateLyricsFromManualInput();
+                showNotification(currentLanguage === 'tr' ? 
+                    'Manuel söz düzenleme modu kapalı' : 
+                    'Manual lyrics editing mode off');
             }
         }
 
+        // Manuel input'u gizle
         function hideManualInput() {
+            document.body.classList.remove('manual-mode', 'editing-lyrics');
+            isEditingLyrics = false;
             manualLyricsInput.style.display = 'none';
             manualLyricsInputEn.style.display = 'none';
             lyricsDisplay.style.display = 'block';
         }
 
-        function updateLyricsFromManual() {
+        // Manuel input'tan sözleri güncelle
+        function updateLyricsFromManualInput() {
             if (!manualLyricsMode) return;
             
             const lyricsText = currentLanguage === 'tr' ? 
@@ -1328,38 +1943,10 @@
             
             const lyricsArray = lyricsText.split('\n').filter(line => line.trim() !== '');
             updateLyrics(lyricsArray);
-            updateSongTextDisplay();
+            updateSongTextDisplay(); // Görünmez mod için güncelle
         }
 
-        function getCurrentLyricsText() {
-            return Array.from(lyricsDisplay.querySelectorAll('.lyrics-line'))
-                .map(line => line.textContent)
-                .join('\n');
-        }
-
-        // LİRİKLERİ GÜNCELLE
-        function updateLyrics(lyricsArray) {
-            lyricsDisplay.innerHTML = '';
-            
-            if (!lyricsArray || lyricsArray.length === 0) {
-                const line = document.createElement('div');
-                line.className = 'lyrics-line';
-                line.textContent = 'Lirikler mevcut değil';
-                lyricsDisplay.appendChild(line);
-                return;
-            }
-            
-            lyricsArray.forEach((line, index) => {
-                const lineEl = document.createElement('div');
-                lineEl.className = 'lyrics-line';
-                lineEl.textContent = line;
-                lyricsDisplay.appendChild(lineEl);
-            });
-            
-            updateSongTextDisplay();
-        }
-
-        // GÖRÜNMEZ MOD İÇİN ŞARKI YAZILARI
+        // Görünmez mod için şarkı yazılarını güncelle
         function updateSongTextDisplay() {
             const lyrics = Array.from(lyricsDisplay.querySelectorAll('.lyrics-line'))
                 .map(line => line.textContent);
@@ -1369,7 +1956,7 @@
             if (lyrics.length === 0) {
                 const line = document.createElement('div');
                 line.className = 'song-text-line';
-                line.textContent = 'Lirikler mevcut değil';
+                line.textContent = currentLanguage === 'tr' ? 'Şarkı sözü yok' : 'No lyrics';
                 songTextDisplay.appendChild(line);
                 return;
             }
@@ -1382,10 +1969,12 @@
                 songTextDisplay.appendChild(line);
             });
             
+            // İlk satırı göster
             currentLyricIndex = 0;
             showCurrentLyric();
         }
 
+        // Görünmez modda mevcut sözü göster
         function showCurrentLyric() {
             const lines = songTextDisplay.querySelectorAll('.song-text-line');
             lines.forEach(line => line.classList.remove('show'));
@@ -1395,6 +1984,7 @@
             }
         }
 
+        // Görünmez modda sonraki söze geç
         function nextLyric() {
             const lines = songTextDisplay.querySelectorAll('.song-text-line');
             if (lines.length === 0) return;
@@ -1403,10 +1993,12 @@
             showCurrentLyric();
         }
 
-        // OYNAT/DURAKLAT
+        // Oynat/Duraklat
         function togglePlay() {
             if (currentSongIndex === -1) {
-                showNotification('Önce bir şarkı yükleyin!');
+                showNotification(currentLanguage === 'tr' ? 
+                    'Önce bir şarkı yükleyin!' : 
+                    'Please upload a song first!');
                 return;
             }
             
@@ -1414,13 +2006,13 @@
                 audioPlayer.pause();
                 playBtn.innerHTML = '<i class="fas fa-play"></i>';
             } else {
-                audioPlayer.play();
+                audioPlayer.play().catch(e => console.log("Oynatma hatası:", e));
                 playBtn.innerHTML = '<i class="fas fa-pause"></i>';
             }
             isPlaying = !isPlaying;
         }
 
-        // ÖNCEKİ ŞARKI
+        // Önceki şarkı
         function playPrevious() {
             if (currentSongIndex === -1 || musicLibrary.length <= 1) return;
             
@@ -1430,7 +2022,7 @@
             if (isPlaying) audioPlayer.play();
         }
 
-        // SONRAKİ ŞARKI
+        // Sonraki şarkı
         function playNext() {
             if (currentSongIndex === -1 || musicLibrary.length <= 1) return;
             
@@ -1440,92 +2032,151 @@
             if (isPlaying) audioPlayer.play();
         }
 
-        // İLERLEME ÇUBUĞU
+        // İlerleme çubuğunu güncelle
         function updateProgressBar() {
             if (currentSongIndex === -1) return;
             
             const currentTime = audioPlayer.currentTime;
-            const duration = audioPlayer.duration;
+            const duration = audioPlayer.duration || (musicLibrary[currentSongIndex]?.duration || 0);
             
             if (duration) {
                 const progressPercent = (currentTime / duration) * 100;
                 progressFill.style.width = `${progressPercent}%`;
                 
+                // Zamanı formatla
                 currentTimeEl.textContent = formatTime(currentTime);
                 currentTimeText.textContent = formatTime(currentTime);
                 totalTimeText.textContent = formatTime(duration);
             }
         }
 
-        // SES
-        function updateVolume() {
-            currentVolume = this.value / 100;
-            audioPlayer.volume = currentVolume;
-        }
-
-        // SEEK
-        function seek(e) {
-            if (currentSongIndex === -1) return;
-            
-            const clickPosition = e.offsetX;
-            const barWidth = this.clientWidth;
-            const percentage = clickPosition / barWidth;
-            
-            audioPlayer.currentTime = percentage * audioPlayer.duration;
-            updateProgressBar();
-        }
-
-        // ZAMAN FORMATI
+        // Zaman formatı
         function formatTime(seconds) {
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-        // ŞARKI BİLGİLERİ
+        // Şarkı bilgilerini güncelle
         function updateSongInfo() {
             if (currentSongIndex === -1) return;
             
-            const duration = audioPlayer.duration;
+            const duration = audioPlayer.duration || (musicLibrary[currentSongIndex]?.duration || 0);
             totalTimeEl.textContent = formatTime(duration);
             totalTimeText.textContent = formatTime(duration);
         }
 
-        // BİTİR
-        function endMedia() {
-            if (!isMediaActive) {
-                showNotification('Aktif şarkı yok');
+        // Şarkı sözlerini güncelle
+        function updateLyrics(lyricsArray) {
+            lyricsDisplay.innerHTML = '';
+            
+            if (!lyricsArray || lyricsArray.length === 0) {
+                const emptyLine = document.createElement('div');
+                emptyLine.className = 'lyrics-line';
+                emptyLine.textContent = currentLanguage === 'tr' ? 
+                    'Şarkı sözleri bulunamadı' : 
+                    'No lyrics found';
+                lyricsDisplay.appendChild(emptyLine);
                 return;
             }
             
-            // ŞARKIYI DURDUR
+            lyricsArray.forEach((line, index) => {
+                const lineEl = document.createElement('div');
+                lineEl.className = 'lyrics-line';
+                lineEl.textContent = line;
+                lyricsDisplay.appendChild(lineEl);
+            });
+        }
+
+        // Dosya yükleme
+        function handleFileUpload(file) {
+            console.log(`Dosya yüklendi: ${file.name}`);
+            
+            // Yeni şarkı oluştur
+            const newSong = {
+                title: file.name.replace('.mp3', ''),
+                artist: 'Yüklenen Şarkı',
+                album: 'Kullanıcı Yüklemesi',
+                src: URL.createObjectURL(file),
+                cover: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                duration: 180, // Varsayılan 3 dakika
+                lyrics: {
+                    tr: [file.name, 'Yüklenen şarkı', 'Lirikler mevcut değil'],
+                    en: [file.name, 'Uploaded song', 'Lyrics not available']
+                }
+            };
+            
+            // Kütüphaneye ekle
+            musicLibrary.push(newSong);
+            currentSongIndex = musicLibrary.length - 1;
+            loadSong(currentSongIndex);
+            
+            // Manuel modu kapat
+            manualLyricsMode = false;
+            isEditingLyrics = false;
+            hideManualInput();
+            
+            // Medya seçiciyi göster
+            showMediaSelector('photo');
+            
+            // Bildirim göster
+            showNotification(`${file.name} ` + 
+                (currentLanguage === 'tr' ? 'yüklendi! Medya ekleyebilirsiniz' : 
+                 'uploaded! You can add media'));
+        }
+
+        // Bitir fonksiyonu
+        function endMedia() {
+            if (!isMediaActive && !isPlaying) {
+                showNotification(currentLanguage === 'tr' ? 
+                    'Aktif bir şarkı yok' : 
+                    'No active song');
+                return;
+            }
+            
+            // Şarkıyı durdur
             if (isPlaying) {
                 audioPlayer.pause();
                 isPlaying = false;
                 playBtn.innerHTML = '<i class="fas fa-play"></i>';
             }
             
-            // BUTONLARI GÜNCELLE
+            // GIF/Videoyu durdur
+            const backgroundVideo = document.getElementById('backgroundVideo');
+            if (backgroundVideo) {
+                backgroundVideo.pause();
+                backgroundVideo.currentTime = 0;
+            }
+            
+            // Butonları güncelle
             isMediaActive = false;
             startMediaBtn.disabled = false;
             endMediaBtn.disabled = true;
             
-            // GÖRÜNMEZ MODDAN ÇIK
+            // Görünmez moddan çık
             if (isInvisibleMode) {
                 toggleInvisibleMode();
             }
             
-            showNotification('ŞARKI DURDURULDU!');
+            showNotification(currentLanguage === 'tr' ? 
+                'ŞARKI/GIF durduruldu!' : 
+                'SONG/GIF stopped!');
         }
 
-        // DİL DEĞİŞTİR
+        // Dil değiştirme
         function changeLanguage(lang) {
             currentLanguage = lang;
             
+            // Dil butonlarını güncelle
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
             });
             
+            // Metinleri değiştir
             document.querySelectorAll('.tr-text').forEach(el => {
                 el.style.display = lang === 'tr' ? (el.classList.contains('manual-text-input') ? 'block' : 'inline') : 'none';
             });
@@ -1534,103 +2185,134 @@
                 el.style.display = lang === 'en' ? (el.classList.contains('manual-text-input') ? 'block' : 'inline') : 'none';
             });
             
-            if (currentSongIndex !== -1) {
+            // Manuel modda textarea'yı güncelle
+            if (manualLyricsMode) {
+                const currentLyrics = Array.from(lyricsDisplay.querySelectorAll('.lyrics-line'))
+                    .map(line => line.textContent)
+                    .join('\n');
+                
+                if (lang === 'tr') {
+                    manualLyricsInput.value = currentLyrics;
+                } else {
+                    manualLyricsInputEn.value = currentLyrics;
+                }
+            }
+            
+            // Şarkı bilgilerini güncelle
+            if (currentSongIndex === -1) {
+                resetPlayer();
+            } else {
                 const song = musicLibrary[currentSongIndex];
-                if (song.lyrics && !manualLyricsMode) {
+                currentSongTitle.textContent = song.title;
+                currentArtist.textContent = `${song.artist} • ${song.album}`;
+                
+                // Şarkı sözlerini güncelle
+                if (!manualLyricsMode && song.lyrics) {
                     updateLyrics(song.lyrics[lang] || song.lyrics.tr || []);
+                    updateSongTextDisplay(); // Görünmez mod için güncelle
                 }
             }
             
-            showNotification(lang === 'tr' ? 'Dil: Türkçe' : 'Language: English');
+            // Bildirim göster
+            showNotification(lang === 'tr' ? 
+                'Dil Türkçe olarak ayarlandı' : 
+                'Language set to English');
         }
 
-        // KLAVYE KONTROLLERİ
-        function handleKeyPress(e) {
-            // G TUŞU - GÖRÜNMEZ MOD
-            if (e.key === 'g' || e.key === 'G') {
-                e.preventDefault();
-                if (!isEditingLyrics) {
-                    toggleInvisibleMode();
+        // Görünmez mod (LİRİK DÜZENLERKEN KORUMALI)
+        function toggleInvisibleMode() {
+            // Lirik düzenlerken G tuşu çalışmasın
+            if (isEditingLyrics) {
+                showNotification(currentLanguage === 'tr' ? 
+                    'Lirik düzenlerken görünmez mod kullanılamaz' : 
+                    'Invisible mode not available while editing lyrics');
+                return;
+            }
+            
+            isInvisibleMode = !isInvisibleMode;
+            
+            if (isInvisibleMode) {
+                document.body.classList.add('invisible-mode');
+                // Manuel modda bile textarea gözüksün
+                if (manualLyricsMode) {
+                    document.body.classList.add('manual-mode', 'editing-lyrics');
                 }
-            }
-            
-            // R TUŞU - BİTİR
-            if (e.key === 'r' || e.key === 'R') {
-                e.preventDefault();
-                endMedia();
-            }
-            
-            // SPACE - KELİME GEÇİŞİ (GÖRÜNMEZ MODDA)
-            if (e.key === ' ' && isInvisibleMode) {
-                e.preventDefault();
-                nextLyric();
-            }
-            
-            // SPACE - OYNAT/DURAKLAT
-            if (e.key === ' ' && currentSongIndex !== -1 && !isInvisibleMode) {
-                const activeElement = document.activeElement;
-                if (activeElement !== manualLyricsInput && activeElement !== manualLyricsInputEn) {
-                    e.preventDefault();
-                    togglePlay();
-                }
-            }
-            
-            // OK TUŞLARI - ŞARKI DEĞİŞTİR
-            if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                playPrevious();
-            }
-            
-            if (e.key === 'ArrowRight') {
-                e.preventDefault();
-                playNext();
-            }
-        }
-
-        // AYARLARI SIFIRLA
-        function resetAllSettings() {
-            if (confirm('Tüm ayarlar sıfırlanacak. Emin misiniz?')) {
-                musicLibrary = [];
-                currentSongIndex = -1;
-                isPlaying = false;
-                isInvisibleMode = false;
-                isMediaActive = false;
-                manualLyricsMode = false;
-                isEditingLyrics = false;
-                
-                audioPlayer.pause();
-                audioPlayer.src = '';
-                
-                currentSongTitle.textContent = 'Şarkı Seçin';
-                currentArtist.textContent = 'Sanatçı Seçin';
-                albumImage.src = 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
-                
+                showNotification(currentLanguage === 'tr' ? 
+                    'Görünmez mod AKTİF - Sadece şarkı yazıları görünür (Space ile geçiş)' : 
+                    'Invisible mode ACTIVE - Only song text visible (Space to switch)');
+            } else {
                 document.body.classList.remove('invisible-mode');
-                document.body.classList.remove('editing-lyrics');
-                
-                hideManualInput();
-                updateLyrics(['Şarkı yükleyin veya sözlerinizi yazın']);
-                
-                startMediaBtn.disabled = false;
-                endMediaBtn.disabled = true;
-                
-                changeLanguage('tr');
-                
-                showNotification('TÜM AYARLAR SIFIRLANDI!');
+                document.body.classList.remove('manual-mode', 'editing-lyrics');
+                showNotification(currentLanguage === 'tr' ? 
+                    'Görünmez mod PASİF' : 
+                    'Invisible mode INACTIVE');
             }
         }
 
-        // BİLDİRİM GÖSTER
-        function showNotification(message) {
-            const notifications = document.querySelectorAll('.notification');
-            notifications.forEach(notif => notif.remove());
+        // Ayarları sıfırla
+        function resetAllSettings() {
+            // Switch'leri sıfırla
+            document.querySelectorAll('.switch').forEach(sw => {
+                sw.classList.remove('active');
+            });
             
+            // CSS'i sıfırla
+            document.body.style.opacity = '1';
+            document.body.style.filter = 'none';
+            document.body.style.backgroundImage = 'none';
+            document.body.classList.remove('invisible-mode');
+            document.body.classList.remove('white-mode');
+            document.body.classList.remove('manual-mode');
+            document.body.classList.remove('editing-lyrics');
+            
+            // Beyaz modu sıfırla
+            isWhiteMode = false;
+            
+            // Arka plan videoyu temizle
+            const backgroundVideo = document.getElementById('backgroundVideo');
+            if (backgroundVideo) backgroundVideo.remove();
+            
+            // Manuel modu kapat
+            manualLyricsMode = false;
+            isEditingLyrics = false;
+            hideManualInput();
+            hideMediaSelector();
+            
+            // Medya durumunu sıfırla
+            isMediaActive = false;
+            startMediaBtn.disabled = false;
+            endMediaBtn.disabled = true;
+            
+            // Türkçe'ye geç
+            changeLanguage('tr');
+            
+            // Player'ı sıfırla
+            resetPlayer();
+            
+            showNotification(currentLanguage === 'tr' ? 
+                'Tüm ayarlar sıfırlandı!' : 
+                'All settings reset!');
+        }
+
+        // Bildirim göster
+        function showNotification(message) {
+            // Eski bildirimleri temizle
+            const oldNotifications = document.querySelectorAll('.notification');
+            oldNotifications.forEach(notif => notif.remove());
+            
+            // Yeni bildirim oluştur
             const notification = document.createElement('div');
             notification.className = 'notification';
-            notification.innerHTML = `<i class="fas fa-info-circle"></i><span>${message}</span>`;
+            notification.innerHTML = `
+                <i class="fas fa-info-circle"></i>
+                <span>${message}</span>
+            `;
             document.body.appendChild(notification);
             
-            setTimeout(() => notification.remove(), 2000);
+            // Bildirimi kaldır
+            setTimeout(() => {
+                notification.remove();
+            }, 2000);
         }
     </script>
 </body>
